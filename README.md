@@ -2,7 +2,7 @@
 
 This is an Angular wrapper for the FullStory JavaScript SDK.
 
-Initial version of code is originally from https://github.com/CaliStyle/ng-fullstory, created just to get something up and running that can identify my users.
+Initial version of code is originally from https://github.com/CaliStyle/ng-fullstory, modified just to get something up and running that can identify my users. The old library seems to not be working anymore.
 
 I will continuously update the library and might introduce breaking changes in the next version.
 
