@@ -1,0 +1,8 @@
+*.d.ts
+*.js
+*.map
+*.metadata.json
+aot
+node_modules
+npm-debug.log
+dist
