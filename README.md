@@ -27,15 +27,15 @@ I will continuously update the library and might introduce breaking changes in t
 
 2. Use in your component
 
-  ```typescript
-  import { Component, OnInit } from '@angular/core';
-  import { Fullstory } from 'ngx-fullstory';
+   ```typescript
+   import { Component, OnInit } from '@angular/core';
+   import { Fullstory } from 'ngx-fullstory';
 
-  @Component({
+   @Component({
     selector: 'app',
     template: `...`
-  })
-  export class AppComponent implements OnInit, OnDestroy {
+   })
+   export class AppComponent implements OnInit, OnDestroy {
     constructor(
     public fullstory: Fullstory
     ){}
@@ -51,5 +51,5 @@ I will continuously update the library and might introduce breaking changes in t
     ngOnDestroy() {
       this.fullstory.logout();
     }
-  }
-  ```
+   }
+   ```
