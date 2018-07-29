@@ -7,8 +7,12 @@ Initial version of code is originally from https://github.com/CaliStyle/ng-fulls
 I will continuously update the library and might introduce breaking changes in the next version.
 
 # Usage
-
-1. Import FullstoryModule
+1. Install via npm
+   ```bash
+   npm install --save ngx-fullstory
+   ```
+   
+2. Import FullstoryModule
 
    ```typescript
    import { FullstoryModule } from 'ngx-fullstory';
@@ -25,7 +29,7 @@ I will continuously update the library and might introduce breaking changes in t
    export class AppModule { }
    ```
 
-2. Use in your component
+3. Use in your component
 
    ```typescript
    import { Component, OnInit } from '@angular/core';
