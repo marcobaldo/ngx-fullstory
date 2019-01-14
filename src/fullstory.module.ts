@@ -9,7 +9,9 @@ import { FullstoryConfig } from './shared/fullstory-config';
     RouterModule
   ],
   declarations: [],
-  exports: [],
+  exports: [
+    Fullstory
+  ],
   providers: [
     Fullstory
   ]

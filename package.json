@@ -1,6 +1,6 @@
 {
-  "name": "ngx-fullstory",
-  "version": "1.0.6",
+  "name": "ngx-fullstory-2",
+  "version": "0.0.1",
   "description": "A FullStory wrapper for Angular 6+",
   "main": "index.js",
   "scripts": {
@@ -25,5 +25,14 @@
     "rollup": "^0.63.4",
     "typescript": "^2.9.2",
     "uglify-js": "^3.4.6"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JasonAtallah/ngx-fullstory.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JasonAtallah/ngx-fullstory/issues"
+  },
+  "homepage": "https://github.com/JasonAtallah/ngx-fullstory#readme"
 }

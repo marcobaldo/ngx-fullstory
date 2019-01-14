@@ -38,10 +38,10 @@ export class Fullstory {
   loadFullstory(config: FullstoryConfig): void {
     let win = (<any>window);
 
-    win['_fs_debug'] = config.fsDebug;
-    win['_fs_host'] = config.fsHost;
+    win['_fs_debug'] = config.fsDebug || false;
+    win['_fs_host'] = config.fsHost || 'fullstory.com';
     win['_fs_org'] = config.fsOrg;
-    win['_fs_namespace'] = config.fsNameSpace;
+    win['_fs_namespace'] = config.fsNameSpace || 'FS';
 
     let load = (m: any, n: any, e: any, t: any, l: any) => {
       if (e in m) {
