@@ -1,15 +1,19 @@
 {
-  "name": "ngx-fullstory",
-  "version": "0.0.0",
+  "name": "@nibo-ai/ngx-fullstory",
+  "version": "2.0.2",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build-prod": "ng build --prod",
+    "prepublish-lib": "npm run build-prod",
+    "publish-lib": "npm publish dist/ngx-fullstory"
   },
-  "private": true,
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@angular/animations": "~9.0.1",
     "@angular/common": "~9.0.1",

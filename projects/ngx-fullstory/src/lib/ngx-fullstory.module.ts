@@ -24,3 +24,5 @@ export class FullstoryModule {
     }
   }
 }
+
+export * from './fullstory/fullstory';

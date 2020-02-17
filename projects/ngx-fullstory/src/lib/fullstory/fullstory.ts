@@ -8,7 +8,6 @@ import { Any, BootInput } from '../types/boot-input';
 /**
  * A provider with every Fullstory.JS method
  */
-@Injectable()
 export class Fullstory {
 
   private id: string;
@@ -46,7 +45,7 @@ export class Fullstory {
     }
 
     // This is an example script - don't forget to change it!
-    (window as any).FS.identify(userId, data)
+    (window as any).FS.identify(userId, data);
   }
 
   logout() {
@@ -58,6 +57,7 @@ export class Fullstory {
   }
 
   loadFullstory(config: FullstoryConfig): void {
+    const args = arguments;
     const win = (window as any);
 
     win['_fs_debug'] = false;
@@ -82,7 +82,7 @@ export class Fullstory {
         g.setUserVars = (v: any) => { g(l, v); };
         g.shutdown = () => { g("rec", !1); };
         g.restart = () => { g("rec", !0); };
-        g.consent = (a: any) => { g("consent", !arguments.length || a); };
+        g.consent = (a: any) => { g("consent", !args.length || a); };
         g.identifyAccount = (i: any, v: any) => { o = 'account'; v = v || {}; v.acctId = i; g(o, v); };
         g.clearUserCookie = () => { };
     };

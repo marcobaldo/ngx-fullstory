@@ -42,6 +42,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ngx-fullstory"
+    }
+  },
+  "defaultProject": "ngx-fullstory",
+  "cli": {
+    "analytics": "fced67a3-ca21-4e20-a1c3-0e657456afe6"
+  }
 }

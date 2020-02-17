@@ -1,6 +1,6 @@
 {
-  "name": "ngx-fullstory",
-  "version": "0.0.1",
+  "name": "@nibo-ai/ngx-fullstory",
+  "version": "2.0.2",
   "peerDependencies": {
     "@angular/common": ">=6.1.0",
     "@angular/core": ">=6.1.0"
