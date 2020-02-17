@@ -14,6 +14,11 @@
           "options": {
             "tsConfig": "projects/ngx-fullstory/tsconfig.lib.json",
             "project": "projects/ngx-fullstory/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-fullstory/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
