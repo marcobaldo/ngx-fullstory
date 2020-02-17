@@ -15,7 +15,7 @@ import { FullstoryConfig } from './shared/fullstory-config';
   ]
 })
 export class FullstoryModule {
-  static forRoot(config: FullstoryConfig): ModuleWithProviders {
+  static forRoot(config: FullstoryConfig): ModuleWithProviders<FullstoryModule> {
     return {
       ngModule: FullstoryModule,
       providers: [
