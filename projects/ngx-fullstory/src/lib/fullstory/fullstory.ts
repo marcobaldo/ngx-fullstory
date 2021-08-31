@@ -61,7 +61,7 @@ export class Fullstory {
     const win = (window as any);
 
     win['_fs_debug'] = false;
-    win['_fs_host'] = 'fullstory.com';
+    win['_fs_host'] = config.fsHost || 'fullstory.com';
     win['_fs_org'] = config.fsOrg;
     win['_fs_namespace'] = 'FS';
 
