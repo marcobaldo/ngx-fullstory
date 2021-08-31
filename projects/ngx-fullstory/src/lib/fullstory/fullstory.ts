@@ -60,10 +60,10 @@ export class Fullstory {
     const args = arguments;
     const win = (window as any);
 
-    win['_fs_debug'] = false;
+    win['_fs_debug'] = (typeof config.fsDebug !== "undefined" ? config.fsDebug : false);
     win['_fs_host'] = config.fsHost || 'fullstory.com';
     win['_fs_org'] = config.fsOrg;
-    win['_fs_namespace'] = 'FS';
+    win['_fs_namespace'] = config.fsNameSpace || 'FS';
 
     const load = (m: any, n: any, e: any, t: any, l: any) => {
         if (e in m) {
