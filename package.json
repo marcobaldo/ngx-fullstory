@@ -1,6 +1,6 @@
 {
-  "name": "@nibo-ai/ngx-fullstory",
-  "version": "2.0.2",
+  "name": "ngx-fullstory",
+  "version": "2.0.3",
   "scripts": {
     "ng": "ng",
     "build": "ng build",
