@@ -1,16 +1,13 @@
-import { Inject, Injectable, PLATFORM_ID, Optional } from '@angular/core';
+import { Inject, PLATFORM_ID, Optional } from '@angular/core';
 import { Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 
 import { FullstoryConfig } from '../shared/fullstory-config';
-import { Any, BootInput } from '../types/boot-input';
 
 /**
  * A provider with every Fullstory.JS method
  */
 export class Fullstory {
-
-  private id: string;
 
   constructor(
     @Inject(FullstoryConfig) private config: FullstoryConfig,
@@ -62,29 +59,43 @@ export class Fullstory {
 
     win['_fs_debug'] = (typeof config.fsDebug !== "undefined" ? config.fsDebug : false);
     win['_fs_host'] = config.fsHost || 'fullstory.com';
+    win['_fs_script'] = config.fsScript || 'edge.fullstory.com/s/fs.js';
     win['_fs_org'] = config.fsOrg;
     win['_fs_namespace'] = config.fsNameSpace || 'FS';
 
     const load = (m: any, n: any, e: any, t: any, l: any) => {
         if (e in m) {
-          if (m.console && m.console.log) {
-            m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');
-          }
-          return;
+            if(m.console?.log) {
+                m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');
+            }
+            return;
         }
-        const g: any = m[e] = (a: any, b: any) => { g.q ? g.q.push([a, b]) : g._api(a, b); };
+        const g: any = m[e] = (a: any, b: any, s: any) => { g.q ? g.q.push([a, b, s]) : g._api(a,b, s); };
         g.q = [];
         let o: any = n.createElement(t);
         o.async = 1;
-        o.src = 'https://' + win['_fs_host'] + '/s/fs.js';
-        const y: any = n.getElementsByTagName(t)[0]; y.parentNode.insertBefore(o, y);
-        g.identify = (i: any, v: any) => { g(l, { uid: i }); if (v) g(l, v) };
-        g.setUserVars = (v: any) => { g(l, v); };
+        o.crossOrigin = 'anonymous';
+        o.src = 'https://'+ win['_fs_script'];
+        let y: any = n.getElementsByTagName(t)[0]; y.parentNode.insertBefore(o, y);
+        g.identify = (i: any, v: any, s: any) => { g(l, {uid:i}, s); if(v) g(l, v, s) };
+        g.setUserVars = (v: any, s: any) => { g(l, v, s); };
+        g.event = (i: any, v: any, s: any) => { g('event', {n: i, p: v}, s); };
+        g.anonymize = () => { g.identify(!!0); };
         g.shutdown = () => { g("rec", !1); };
         g.restart = () => { g("rec", !0); };
+        g.log = (a: any, b: any) => { g("log", [a, b]); };
         g.consent = (a: any) => { g("consent", !args.length || a); };
         g.identifyAccount = (i: any, v: any) => { o = 'account'; v = v || {}; v.acctId = i; g(o, v); };
         g.clearUserCookie = () => { };
+        g.setVars = (nn: any, p: any) => { g('setVars', [nn, p]); };
+        g._w = {};
+        y = 'XMLHttpRequest';
+        g._w[y] = m[y];
+        y = 'fetch';
+        g._w[y] = m[y];
+        if (m[y])
+            m[y] = () => g._w[y].apply(this, args);
+        g._v = "1.3.0";
     };
 
     load(win, document, win['_fs_namespace'], 'script', 'user');
