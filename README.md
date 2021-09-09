@@ -57,3 +57,11 @@ I will continuously update the library and might introduce breaking changes in t
     }
    }
    ```
+
+   # For developers of this package
+   If you want to publish a new version of this package, bump up the version in 
+   - `package.json`
+   - `package-lock.json`
+   - `projects/ngx-fullstory/package.json`
+   
+   and then run `npm run publish-lib`.
