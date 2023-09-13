@@ -1,6 +1,12 @@
+# Deprecated
+
+This repository is considered deprecated and will be archived.
+
+FullStory has released an official browser SDK - [@fullstory/browser](https://www.npmjs.com/package/@fullstory/browser), which you can find [here](https://github.com/fullstorydev/fullstory-browser-sdk).
+
 # Introduction
 
-This is an Angular wrapper for the FullStory JavaScript SDK.
+This is an Angular wrapper for the Full.Story JavaScript SDK.
 
 Initial version of code is originally from https://github.com/CaliStyle/ng-fullstory, modified just to get something up and running that can identify my users. The old library seems to not be working anymore.
 
